@@ -1,0 +1,370 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+:root{
+    --BgFacebook: #3b5998;
+    --BgTwitter: #00acee;
+    --BgInstagram: #DD2A7B;
+    --BgWhatsapp: #25d366;
+    --BgYoutube: #c4302b ;
+}
+.Container{
+    min-height: 100vh;
+    background-image: linear-gradient(
+        rgba(0,0,0,.8),
+        rgba(0,0,0,.8)
+    ),
+    url(../img/BG.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: grid;
+    place-content: center;
+    gap: 20px;
+}
+.Social{
+    text-decoration: none;
+    transition: .6s;
+    width: 350px;
+    height: 80px;
+    color: #fff;
+    position: relative;
+    background: linear-gradient(
+        rgba(0,0,0,.5),
+        rgba(0,0,0,.5)
+    );
+    overflow: hidden;
+    animation: Spawn 1s;
+}
+@keyframes Spawn{
+    0%{
+        transform: scale(0);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.Text{
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+}
+.Text p{
+    transition: .6s;
+    height: 80px;
+    font-size: 2em;
+    font-weight: 600;
+}
+.Text:hover p{
+    transition: .6s;
+    bottom: 50px;
+    letter-spacing: 5px;
+    transform: translateY(-100%);
+}
+.Social:nth-child(1):hover p{
+    transition: .6s;
+    animation: TextColorFacebook 3s linear infinite;
+}
+@keyframes TextColorFacebook{
+    0%{
+        color: var(--BgFacebook);
+        letter-spacing: 0px;
+    }
+    50%{
+        color: #fff;
+        letter-spacing: 3px;
+    }
+    100%{
+        color: var(--BgFacebook);
+        letter-spacing: 0px;
+    }
+}
+.Social:nth-child(1):hover span:nth-child(1){
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: var(--BgFacebook);
+    animation: SocialLTR 2s linear infinite;
+}
+.Social:nth-child(1):hover span:nth-child(2){
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: var(--BgFacebook);
+    animation: SocialTTB 2s linear infinite;
+}
+.Social:nth-child(1):hover span:nth-child(3){
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: var(--BgFacebook);
+    animation: SocialRTL 2s linear infinite;
+}
+.Social:nth-child(1):hover span:nth-child(4){
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: var(--BgFacebook);
+    animation: SocialBTT 2s linear infinite;
+}
+.Social:nth-child(2):hover p{
+    transition: .6s;
+    animation: TextColorTwitter 3s linear infinite;
+}
+@keyframes TextColorTwitter{
+    0%{
+        color: var(--BgTwitter);
+        letter-spacing: 0px;
+    }
+    50%{
+        color: #fff;
+        letter-spacing: 3px;
+    }
+    100%{
+        color: var(--BgTwitter);
+        letter-spacing: 0px;
+    }
+}
+.Social:nth-child(2):hover span:nth-child(1){
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: var(--BgTwitter);
+    animation: SocialLTR 2s linear infinite;
+}
+.Social:nth-child(2):hover span:nth-child(2){
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: var(--BgTwitter);
+    animation: SocialTTB 2s linear infinite;
+}
+.Social:nth-child(2):hover span:nth-child(3){
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: var(--BgTwitter);
+    animation: SocialRTL 2s linear infinite;
+}
+.Social:nth-child(2):hover span:nth-child(4){
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: var(--BgTwitter);
+    animation: SocialBTT 2s linear infinite;
+}
+.Social:nth-child(3):hover p{
+    transition: .6s;
+    animation: TextColorInstagram 3s linear infinite;
+}
+@keyframes TextColorInstagram{
+    0%{
+        color: var(--BgInstagram);
+        letter-spacing: 0px;
+    }
+    50%{
+        color: #fff;
+        letter-spacing: 3px;
+    }
+    100%{
+        color: var(--BgInstagram);
+        letter-spacing: 0px;
+    }
+}
+.Social:nth-child(3):hover span:nth-child(1){
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: var(--BgInstagram);
+    animation: SocialLTR 2s linear infinite;
+}
+.Social:nth-child(3):hover span:nth-child(2){
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: var(--BgInstagram);
+    animation: SocialTTB 2s linear infinite;
+}
+.Social:nth-child(3):hover span:nth-child(3){
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: var(--BgInstagram);
+    animation: SocialRTL 2s linear infinite;
+}
+.Social:nth-child(3):hover span:nth-child(4){
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: var(--BgInstagram);
+    animation: SocialBTT 2s linear infinite;
+}
+.Social:nth-child(4):hover p{
+    transition: .6s;
+    animation: TextColorWhatsapp 3s linear infinite;
+}
+@keyframes TextColorWhatsapp{
+    0%{
+        color: var(--BgWhatsapp);
+        letter-spacing: 0px;
+    }
+    50%{
+        color: #fff;
+        letter-spacing: 3px;
+    }
+    100%{
+        color: var(--BgWhatsapp);
+        letter-spacing: 0px;
+    }
+}
+.Social:nth-child(4):hover span:nth-child(1){
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: var(--BgWhatsapp);
+    animation: SocialLTR 2s linear infinite;
+}
+.Social:nth-child(4):hover span:nth-child(2){
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: var(--BgWhatsapp);
+    animation: SocialTTB 2s linear infinite;
+}
+.Social:nth-child(4):hover span:nth-child(3){
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: var(--BgWhatsapp);
+    animation: SocialRTL 2s linear infinite;
+}
+.Social:nth-child(4):hover span:nth-child(4){
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: var(--BgWhatsapp);
+    animation: SocialBTT 2s linear infinite;
+}
+.Social:nth-child(5):hover p{
+    transition: .6s;
+    animation: TextColorYoutube 3s linear infinite;
+}
+@keyframes TextColorYoutube{
+    0%{
+        color: var(--BgYoutube);
+        letter-spacing: 0px;
+    }
+    50%{
+        color: #fff;
+        letter-spacing: 3px;
+    }
+    100%{
+        color: var(--BgYoutube);
+        letter-spacing: 0px;
+    }
+}
+.Social:nth-child(5):hover span:nth-child(1){
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: var(--BgYoutube);
+    animation: SocialLTR 2s linear infinite;
+}
+.Social:nth-child(5):hover span:nth-child(2){
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: var(--BgYoutube);
+    animation: SocialTTB 2s linear infinite;
+}
+.Social:nth-child(5):hover span:nth-child(3){
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: var(--BgYoutube);
+    animation: SocialRTL 2s linear infinite;
+}
+.Social:nth-child(5):hover span:nth-child(4){
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: var(--BgYoutube);
+    animation: SocialBTT 2s linear infinite;
+}
+@keyframes SocialLTR{
+    0%{
+        left: -100%;
+    }
+    100%{
+        left: 100%;
+    }
+}
+@keyframes SocialTTB{
+    0%{
+        top: -100%;
+    }
+    100%{
+        top: 100%;
+    }
+}
+@keyframes SocialRTL{
+    0%{
+        right: -100%;
+    }
+    100%{
+        right: 100%;
+    }
+}
+@keyframes SocialBTT{
+    0%{
+        bottom: -100%;
+    }
+    100%{
+        bottom: 100%;
+    }
+}

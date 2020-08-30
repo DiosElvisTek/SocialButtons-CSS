@@ -1,0 +1,149 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+:root{
+    --BgFacebook: #3b5998;
+    --BgTwitter: #00acee;
+    --BgInstagram: #DD2A7B;
+    --BgWhatsapp: #25d366;
+    --BgYoutube: #c4302b;
+    --BgWhite: #f1f1f1;
+}
+
+/*------ AQUI EMPIEZA EL CSS DEL CONTENIDO ------*/
+.Contenido{
+    position: relative;
+    top: 50px;
+    min-height: calc(100vh - 50px);
+    background-image: linear-gradient(
+        rgba(0,0,0,.8),
+        rgba(0,0,0,.8)
+    ),
+    url(img/BG.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "Titulo Titulo Titulo"
+    "Estilo-1 Estilo-2 Estilo-3"
+    "Estilo-4 Estilo-5 Estilo-6";
+    gap: 15px;
+    padding: 20px 10px;
+}
+.Titulo{
+    grid-area: Titulo;
+    display: grid;
+    place-content: center;
+    font-size: 2em;
+    text-align: center;
+    color: var(--BgWhite);
+}
+.Estilo-1{
+    grid-area: Estilo-1;
+    background-image: url(img/Estilo-1.png);
+}
+.Estilo-2{
+    grid-area: Estilo-2;
+    background-image: url(img/Estilo-2.png);
+}
+.Estilo-3{
+    grid-area: Estilo-3;
+    background-image: url(img/Estilo-3.png);
+}
+.Estilo-4{
+    grid-area: Estilo-4;
+    background-image: url(img/Estilo-4.png);
+}
+.Estilo-5{
+    grid-area: Estilo-5;
+    background-image: url(img/Estilo-5.png);
+}
+.Estilo-6{
+    grid-area: Estilo-6;
+    background-image: url(img/Estilo-6.png);
+}
+.Contenido div{
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    place-content: center;
+    transition: 1s;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    border: 1px solid var(--BgWhite);
+}
+.Contenido div:hover:nth-child(1n){
+    transition: 1s;
+    transform: scale(.9);
+}
+.Contenido div:hover:nth-child(1n) .Ver{
+    transition: 1s;
+    transform: scale(1);
+}
+.Ver{
+    width: 100%;
+    height: 100%; 
+    position: absolute;
+    transform: scale(0);
+    background: linear-gradient(
+        rgba(0,0,0,.9),
+        rgba(0,0,0,.9)
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: 1s;
+}
+.Boton{
+    transition: 1s;
+    text-decoration: none;
+    font-size: 1.5em;
+    padding: 5px 25px;
+    color: var(--BgWhite);
+    border: 1px solid var(--BgWhite);
+    border-radius: 5px;
+}
+.Boton:hover{
+    transition: 1s;
+    color: var(--BgTwitter);
+    border: 1px solid var(--BgTwitter);
+}
+.Boton:hover {
+    transition: 1s;
+    color: var(--BgTwitter);
+    border: 1px solid var(--BgTwitter);
+}
+/*------ AQUI TERMINA EL CSS DEL CONTENIDO ------*/
+@media (max-width: 700px){
+    .Titulo{
+        font-size: 1.7em;
+    }
+}
+@media (max-width: 550px){
+    .Contenido{
+        grid-template-areas: "Titulo Titulo Titulo"
+        "Estilo-1 Estilo-1 Estilo-1"
+        "Estilo-2 Estilo-2 Estilo-2"
+        "Estilo-3 Estilo-3 Estilo-3"
+        "Estilo-4 Estilo-4 Estilo-4"
+        "Estilo-5 Estilo-5 Estilo-5"
+        "Estilo-6 Estilo-6 Estilo-6";
+    }
+    .Estilo-1, .Estilo-2, .Estilo-3, .Estilo-4, .Estilo-5, .Estilo-6{
+        height: 200px;
+    }
+    .Titulo{
+        font-size: 1.5em;
+    }
+}
+@media (max-width: 400px){
+    .Titulo{
+        font-size: 1.3em;
+    }
+}

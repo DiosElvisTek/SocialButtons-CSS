@@ -1,0 +1,118 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+:root{
+    --BgFacebook: #3b5998;
+    --BgTwitter: #00acee;
+    --BgInstagram: #DD2A7B;
+    --BgWhatsapp: #25d366;
+    --BgYoutube: #c4302b ;
+}
+.Container{
+    min-height: 100vh;
+    background-image: linear-gradient(
+        rgba(0,0,0,.8),
+        rgba(0,0,0,.8)
+    ),
+    url(../img/BG.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: grid;
+    place-content: center;
+    gap: 20px;
+}
+.Social{
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    display: grid;
+    place-content: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 1.2s;
+    cursor: pointer;
+}
+.Social:nth-child(1){
+    border: 2px solid var(--BgFacebook);
+}
+.Social:nth-child(2){
+    border: 2px solid var(--BgTwitter);
+}
+.Social:nth-child(3){
+    border: 2px solid var(--BgInstagram);
+}
+.Social:nth-child(4){
+    border: 2px solid var(--BgWhatsapp);
+}
+.Social:nth-child(5){
+    border: 2px solid var(--BgYoutube);
+}
+.Social:hover{
+    border: 2px solid #fff;
+    transition: 1.2s;
+}
+.Social:hover .Icon{
+    color: #fff !important;
+    font-size: 2em;
+    transform: rotate(360deg);
+    transition: 1.2s;
+}
+.Social::after{
+    transition: .6s;
+    opacity: .5;
+}
+.Social::before{
+    transition: 1.2s;
+}
+.Social::after, .Social::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    transform: rotate(-35deg) translateY(-350%);
+    z-index: -1;
+}
+.Social:nth-child(1)::after, .Social:nth-child(1)::before{
+    background: var(--BgFacebook);
+}
+.Social:nth-child(2)::after, .Social:nth-child(2)::before{
+    background: var(--BgTwitter);
+}
+.Social:nth-child(3)::after, .Social:nth-child(3)::before{
+    background: var(--BgInstagram);
+}
+.Social:nth-child(4)::after, .Social:nth-child(4)::before{
+    background: var(--BgWhatsapp);
+}
+.Social:nth-child(5)::after, .Social:nth-child(5)::before{
+    background: var(--BgYoutube);
+}
+
+.Social:hover::after, .Social:hover::before{
+    transform: translateY(0);
+}
+.Icon{
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: 1.2s;
+}
+.Social:nth-child(1) .Icon{
+    color: var(--BgFacebook);
+}
+.Social:nth-child(2) .Icon{
+    color: var(--BgTwitter);
+}
+.Social:nth-child(3) .Icon{
+    color: var(--BgInstagram);
+}
+.Social:nth-child(4) .Icon{
+    color: var(--BgWhatsapp);
+}
+.Social:nth-child(5) .Icon{
+    color: var(--BgYoutube);
+}
