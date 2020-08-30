@@ -14,8 +14,8 @@
 .Container{
     min-height: 100vh;
     background-image: linear-gradient(
-        rgba(0,0,0,.8),
-        rgba(0,0,0,.8)
+        rgba(0,0,0),
+        rgba(0,0,0)
     ),
     url(../img/BG.jpg);
     background-size: cover;
@@ -132,6 +132,6 @@
         display: grid;
         place-items: center;
         gap: 60px;
-        padding: 60px 0px;
+        padding: 200px 0px;
     }
 }

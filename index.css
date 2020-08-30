@@ -27,42 +27,36 @@
     background-repeat: no-repeat;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "Titulo Titulo Titulo"
-    "Estilo-1 Estilo-2 Estilo-3"
-    "Estilo-4 Estilo-5 Estilo-6";
     gap: 15px;
     padding: 20px 10px;
 }
 .Titulo{
-    grid-area: Titulo;
     display: grid;
     place-content: center;
     font-size: 2em;
     text-align: center;
     color: var(--BgWhite);
+    grid-column: span 3;
 }
-.Estilo-1{
-    grid-area: Estilo-1;
+.Estilo{
+    grid-column: span 1;
+}
+.Contenido div:nth-child(2){
     background-image: url(img/Estilo-1.png);
 }
-.Estilo-2{
-    grid-area: Estilo-2;
+.Contenido div:nth-child(3){
     background-image: url(img/Estilo-2.png);
 }
-.Estilo-3{
-    grid-area: Estilo-3;
+.Contenido div:nth-child(4){
     background-image: url(img/Estilo-3.png);
 }
-.Estilo-4{
-    grid-area: Estilo-4;
+.Contenido div:nth-child(5){
     background-image: url(img/Estilo-4.png);
 }
-.Estilo-5{
-    grid-area: Estilo-5;
+.Contenido div:nth-child(6){
     background-image: url(img/Estilo-5.png);
 }
-.Estilo-6{
-    grid-area: Estilo-6;
+.Contenido div:nth-child(7){
     background-image: url(img/Estilo-6.png);
 }
 .Contenido div{
@@ -126,16 +120,8 @@
     }
 }
 @media (max-width: 550px){
-    .Contenido{
-        grid-template-areas: "Titulo Titulo Titulo"
-        "Estilo-1 Estilo-1 Estilo-1"
-        "Estilo-2 Estilo-2 Estilo-2"
-        "Estilo-3 Estilo-3 Estilo-3"
-        "Estilo-4 Estilo-4 Estilo-4"
-        "Estilo-5 Estilo-5 Estilo-5"
-        "Estilo-6 Estilo-6 Estilo-6";
-    }
-    .Estilo-1, .Estilo-2, .Estilo-3, .Estilo-4, .Estilo-5, .Estilo-6{
+    .Estilo{
+        grid-column: span 3;
         height: 200px;
     }
     .Titulo{
