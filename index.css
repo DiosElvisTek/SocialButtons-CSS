@@ -27,6 +27,7 @@
 .MobileMenu{
     background: var(--ColorSidebar);
     position: fixed;
+    top: -200%;
     min-height: 100vh;
     min-width: 100%;
     z-index: 1000;
@@ -34,12 +35,11 @@
     place-content: center;
     place-items: center;
     gap: 50px;
-    transform: scale(0);
     transition: var(--DuracionTransiciones);
 }
 .MobileMenu.Active{
     transition: var(--DuracionTransiciones);
-    transform: scale(1);
+    top: 0%;
 }
 .CloseMobileMenu{
     position: absolute;
