@@ -1,135 +1,293 @@
 *{
-    padding: 0;
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
 }
 :root{
-    --BgFacebook: #3b5998;
-    --BgTwitter: #00acee;
-    --BgInstagram: #DD2A7B;
-    --BgWhatsapp: #25d366;
-    --BgYoutube: #c4302b;
-    --BgWhite: #f1f1f1;
+    --ColorLinearGradient: linear-gradient(
+        to right,
+        rgb(0, 169, 244),
+        rgb(147, 225, 237)
+    );
+    --ColorSidebar: #1d3893;
+    --ColorOpcionesIcono: #4762ba;
+    --ColorMain: #f1f5f8;
+    --ColorBlanco: #fff;
+    --ColorBorderMenu: rgba(255, 255, 255, .1);
+    --ColorIcons: #c9d4de;
+    --ColorTextoYPlaceholders: #b6b8ba;
+    --DuracionTransiciones: 1s;
+    --ColorTwitter: #00acee;
+    --ColorFacebook: #3b5998;
+    --ColorInstagram: #DD2A7B;
+    --ColorCorreo: #eeff00;
+    --ColorWhatsapp: #25d366;
+}
+/* ----------------- CSS DEL MENU QUE SE MUESTRA EN MOVILES ----------------- */
+.MobileMenu{
+    background: var(--ColorSidebar);
+    position: fixed;
+    top: -100%;
+    min-height: 100vh;
+    min-width: 100%;
+    z-index: 1000;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    gap: 50px;
+    transition: var(--DuracionTransiciones);
+}
+.MobileMenu.Active{
+    transition: var(--DuracionTransiciones);
+    top: 0%
+}
+.CloseMobileMenu{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.CloseMobileMenu i{
+    font-size: 2em;
+    color: var(--ColorBlanco);
+    transition: var(--DuracionTransiciones);
+}
+.CloseMobileMenu i:hover{
+    transition: var(--DuracionTransiciones);
+    transform: rotate(180deg) scale(1.3);
+    cursor: pointer;
+}
+.OptionsMobileMenu{
+    list-style: none;
+    display: grid;
+    place-items: center;
+    gap: 25px;
+}
+.OptionsMobileMenu a, .OptionsMobileIcons a{
+    font-size: 2em;
+    text-decoration: none;
+    color: var(--ColorBlanco);
+    transition: var(--DuracionTransiciones);
+}
+.OptionsMobileMenu a:hover{
+    letter-spacing: 7px;
+    transition: var(--DuracionTransiciones);
+}
+.OptionsMobileIcons{
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+.OptionsMobileIcons i{
+    transition: var(--DuracionTransiciones);
+}
+.OptionsMobileIcons i:hover{
+    transition: var(--DuracionTransiciones);
+    transform: rotate(15deg) scale(1.5);
 }
 
-/*------ AQUI EMPIEZA EL CSS DEL CONTENIDO ------*/
-.Contenido{
-    position: relative;
-    top: 50px;
-    min-height: calc(100vh - 50px);
-    background-image: linear-gradient(
-        rgba(0,0,0,.8),
-        rgba(0,0,0,.8)
-    ),
-    url(img/BG.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+/* ----------------- NOMBRE ----------------- */
+.Container{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    padding: 20px 10px;
+    grid-template-columns: 20% 80%;
 }
-.Titulo{
-    display: grid;
-    place-content: center;
-    font-size: 2em;
-    text-align: center;
-    color: var(--BgWhite);
-    grid-column: span 3;
-}
-.Estilo{
+/* ----------------- NOMBRE ----------------- */
+.Sidebar{
+    background: var(--ColorSidebar);
+    min-height: 100vh;
     grid-column: span 1;
 }
-.Contenido div:nth-child(2){
-    background-image: url(img/Estilo-1.png);
-}
-.Contenido div:nth-child(3){
-    background-image: url(img/Estilo-2.png);
-}
-.Contenido div:nth-child(4){
-    background-image: url(img/Estilo-3.png);
-}
-.Contenido div:nth-child(5){
-    background-image: url(img/Estilo-4.png);
-}
-.Contenido div:nth-child(6){
-    background-image: url(img/Estilo-5.png);
-}
-.Contenido div:nth-child(7){
-    background-image: url(img/Estilo-6.png);
-}
-.Contenido div{
-    position: relative;
-    overflow: hidden;
-    display: grid;
-    place-content: center;
-    transition: 1s;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 5px;
-    border: 1px solid var(--BgWhite);
-}
-.Contenido div:hover:nth-child(1n){
-    transition: 1s;
-    transform: scale(.9);
-}
-.Contenido div:hover:nth-child(1n) .Ver{
-    transition: 1s;
-    transform: scale(1);
-}
-.Ver{
-    width: 100%;
-    height: 100%; 
-    position: absolute;
-    transform: scale(0);
-    background: linear-gradient(
-        rgba(0,0,0,.9),
-        rgba(0,0,0,.9)
-    );
+.Header{
+    height: 25%;
+    padding: 0px 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
-    transition: 1s;
+    flex-direction: column;
+    border-bottom: 1px solid var(--ColorBorderMenu);
 }
-.Boton{
-    transition: 1s;
-    text-decoration: none;
-    font-size: 1.5em;
-    padding: 5px 25px;
-    color: var(--BgWhite);
-    border: 1px solid var(--BgWhite);
+.Header img{
+    width: 50%;
+    filter: drop-shadow(-3px -3px 2px rgba(0,0,0,0.3))
+            drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
+}
+.Header p{
+    color: var(--ColorBlanco);
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding: 20px 0px;
+}
+.Menu{
+    height: 75%;
+}
+.Options{
+    padding: 20px 0px;
+    display: flex;
+    color: var(--ColorBlanco);
+    border-bottom: 1px solid var(--ColorBorderMenu);
+}
+.Options:hover{
+    background: var(--ColorLinearGradient);
+    cursor: pointer;
+}
+.Options:hover .IconOption{
+    color: var(--ColorBlanco);
+}
+.IconOption{
+    height: 100%;
+    width: 25%;
+    color: var(--ColorOpcionesIcono);
+    display: grid;
+    place-items: center;
+}
+.NameOption{
+    height: 100%;
+    width: 75%;
+    display: flex;
+    align-items: center;
+}
+
+/* ----------------- NOMBRE ----------------- */
+.Main{
+    background: var(--ColorMain);
+    overflow: auto;
+    min-height: 100vh;
+    grid-column: span 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 10% 90%;
+}
+/* ----------------- NOMBRE ----------------- */
+.Search{
+    position: relative;
+    padding: 0px 15px;
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.InputSearch{
+    width: 50%;
+    border: none;
+    padding: 15px 40px;
     border-radius: 5px;
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.1);
+    color: var(--ColorTextoYPlaceholders);
+    text-align: right;
 }
-.Boton:hover{
-    transition: 1s;
-    color: var(--BgTwitter);
-    border: 1px solid var(--BgTwitter);
+.InputSearch::placeholder{
+    color: var(--ColorTextoYPlaceholders);
 }
-.Boton:hover {
-    transition: 1s;
-    color: var(--BgTwitter);
-    border: 1px solid var(--BgTwitter);
+.ShowMenu{
+    padding: 10px 15px;
+    background: var(--ColorBlanco);
+    color: var(--ColorSidebar);
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.1);
+    transition: var(--DuracionTransiciones);
+    transform: scale(0);
 }
-/*------ AQUI TERMINA EL CSS DEL CONTENIDO ------*/
-@media (max-width: 700px){
-    .Titulo{
-        font-size: 1.7em;
+.ShowMenu i{
+    transition: var(--DuracionTransiciones);
+}
+.ShowMenu:hover{
+    cursor: pointer;
+    transition: var(--DuracionTransiciones);
+    background: var(--ColorSidebar);
+}
+.ShowMenu:hover i{
+    transition: var(--DuracionTransiciones);
+    color: var(--ColorBlanco);
+    transform: rotate(180deg) scale(1.3);
+}
+.SearchElement{
+    position: absolute;
+    right: 30px;
+    color: var(--ColorIcons);
+}
+/* ----------------- NOMBRE ----------------- */
+.Content{  
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 50%;
+    gap: 15px;
+}
+.Element{
+    grid-column: span 1;
+    display: grid;
+    place-items: center;
+}
+.Preview{
+    width: 90%;
+    height: 90%;
+    background: var(--ColorBlanco);
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.Preview:hover .InfoImage{
+    transition: var(--DuracionTransiciones);
+    bottom: 0%;
+}
+.ViewImage{
+    transform: scale(1.7);
+    width: 150%;
+    height: 80%;
+}
+.InfoImage{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: -100%;
+    transition: var(--DuracionTransiciones);
+    background: var(--ColorSidebar);
+    color: var(--ColorBlanco);
+    display: grid;
+    place-items: center;
+}
+.ImageButtons a{
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    background: var(--ColorSidebar);
+    border: 1px solid var(--ColorBlanco);
+    color: var(--ColorBlanco);
+    transition: var(--DuracionTransiciones);
+}
+.ImageButtons a:hover{
+    background: var(--ColorBlanco);
+    border: 1px solid var(--ColorBlanco);
+    color: var(--ColorSidebar);
+    transition: var(--DuracionTransiciones);
+}
+@media (max-width: 1200px){
+    .Element{
+        grid-column: span 2;
     }
 }
-@media (max-width: 550px){
-    .Estilo{
-        grid-column: span 3;
-        height: 200px;
+@media (max-width: 1024px){
+    .Sidebar{
+        display: none;
     }
-    .Titulo{
-        font-size: 1.5em;
+    .Main{
+        grid-column: span 2;
+    }
+    .ShowMenu{
+        margin-left: 5px;
+        transform: scale(1);
     }
 }
-@media (max-width: 400px){
-    .Titulo{
-        font-size: 1.3em;
+@media (max-width: 500px){
+    .Element{
+        grid-column: span 4;
+    }
+    .ViewImage{
+        transform: scale(2);
+        width: 100%;
+        height: 60%;
     }
 }
